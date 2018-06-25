@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean
+			name="LoginForm"
+			type="form.LoginForm" />
+		<form-bean
+			name="StudentForm"
+			type="form.StudentForm" />
+		<form-bean
+			name="LocaleForm"
+			type="form.LocaleForm" />
+	</form-beans>
+	<action-mappings>
+		<action
+			path="/login"
+			parameter="/WEB-INF/login.jsp"
+			type="org.apache.struts.actions.ForwardAction" />
+		<action
+			path="/auth"
+			type="action.AuthenticationAction"
+			name="LoginForm"
+			scope="request"
+			validate="true"
+			input="/WEB-INF/login.jsp">
+			<forward
+				name="list"
+				path="/process.do?method=list"
+				redirect="true" />
+			<forward
+				name="login"
+				path="/WEB-INF/login.jsp" />
+		</action>
+		<action
+			path="/process"
+			type="action.AdminAction"
+			parameter="method"
+			name="StudentForm"
+			validate="true"
+			scope="request"
+			input="/process.do?method=list"
+			cancellable="true">
+			<forward
+				name="list"
+				path="/WEB-INF/index.jsp" />
+			<forward
+				name="add"
+				path="/WEB-INF/adminAdd.jsp" />
+			<forward
+				name="edit"
+				path="/WEB-INF/adminEdit.jsp" />
+		</action>
+		<action
+			path="/locale"
+			type="action.LocaleAction"
+			name="LocaleForm"
+			scope="request">
+			<forward
+				name="list"
+				path="/process.do?method=list"
+				redirect="true" />
+		</action>
+		<action
+			path="/logout"
+			type="action.LogoutAction">
+			<forward
+				name="login"
+				path="/login.do"
+				redirect="true" />
+		</action>
+	</action-mappings>
+	<message-resources parameter="properties.language" />
+</struts-config>

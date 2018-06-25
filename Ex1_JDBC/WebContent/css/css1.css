@@ -1,0 +1,88 @@
+/* table{
+	margin : 20px auto 10px auto;
+}
+ul{
+	text-align : right;
+	margin : 10px;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+td{
+	padding : 4px;
+}
+li{
+	display : inline;
+	margin-right : 10px;
+}
+.student-display{
+	border-collapse : collapse;	
+}
+.student-display td:not(.hidden-input){
+	border : 1px black solid;
+}
+h1{
+	text-align : center;
+}
+.cancel-button, .logout{
+	display : inline;
+}
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+	text-decoration: none;
+    color: initial;
+}
+.page-display{
+	text-align : center;
+}
+.current-page{
+	text-decoration : underline;
+}
+.other-display-pages{
+	color : blue;
+	padding : 1px 3px;
+	background : #e0e0eb;
+}
+.message{
+	text-align : center;
+	color : red;
+	font-size : 12px;
+	list-style : bullets;
+}
+.message li{
+	display : block;
+}
+.student-display{
+	table-layout : fix;
+}
+.student-display td{
+	overflow : hidden;
+}
+.student-display {
+	table-layout: fixed;
+	width : 200px;
+}
+
+.student-display td {
+	overflow: hidden;
+}
+
+.student-display td:nth-of-type(1) {
+	width: 20px;
+}
+
+.student-display td:nth-of-type(2) {
+	width: 20px;
+} 
+.student-display td:nth-of-type(3) {
+	width: 80px;
+} 
+.student-display td:nth-of-type(4) {
+	width: 80px;
+}  */
+.top-10{
+	margin-top : 10px;
+}
